@@ -1,0 +1,9 @@
+{
+    "User": true,
+    "CMS": true,
+    "Newsletter": true,
+    "Executive": true,
+    "Gallery": true,
+    "Event": true,
+    "NewsnEvents": true
+}

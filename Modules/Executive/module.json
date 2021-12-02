@@ -1,0 +1,13 @@
+{
+    "name": "Executive",
+    "alias": "executive",
+    "description": "",
+    "keywords": [],
+    "order": 2,
+    "providers": [
+        "Modules\\Executive\\Providers\\ExecutiveServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

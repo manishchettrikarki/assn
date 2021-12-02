@@ -1,0 +1,13 @@
+{
+    "name": "CMS",
+    "alias": "cms",
+    "description": "Content Management for system",
+    "keywords": [],
+    "order": 5,
+    "providers": [
+        "Modules\\CMS\\Providers\\CMSServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
