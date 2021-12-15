@@ -104,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\ason\Modules\Gallery\Resources\assets\js\back\app.js */"./Modules/Gallery/Resources/assets/js/back/app.js");
+module.exports = __webpack_require__(/*! E:\xampp\htdocs\assn\Modules\Gallery\Resources\assets\js\back\app.js */"./Modules/Gallery/Resources/assets/js/back/app.js");
 
 
 /***/ })

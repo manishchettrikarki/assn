@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+.error {
+    color: red;
+}
 /*POPUP STYLE STARTS*/
 .img-replace {
     /* replace text with an image */
@@ -886,14 +890,6 @@ img .eventbg {
     -moz-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
 }
 
-#steps-container {
-    margin: auto;
-    width: 500px;
-    min-height: 420px;
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-}
 
 .step {
     display: none;

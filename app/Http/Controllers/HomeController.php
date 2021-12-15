@@ -19,16 +19,17 @@ class HomeController extends Controller
         $banners = $this->sliderContract->all();
         $upcomingEvent = Event::where ('start_date','>=',now())->orderBy('start_date','desc')->first();
         $latestEvent = Event::where ('start_date','<',now())->orderBy('start_date','desc')->limit(3)->get();
-       if(!$upcomingEvent || $upcomingEvent->start_date->isBefore(now())){
-         $upcomingEvent = false;
-       }
-       $messages = $this->messageContract->all();
-       if(!$messages){
-         $messages = false;
-       }
+        if(!$upcomingEvent || $upcomingEvent->start_date->isBefore(now())){
+            $upcomingEvent = false;
+        }
+        $messages = $this->messageContract->all();
+        if(!$messages){
+            $messages = false;
+        }
         return view('welcome',compact('banners','upcomingEvent','latestEvent','messages'));
     }
-    public function becomemember(){
-     return view('become-member');
-    }
+
+
+
+
 }

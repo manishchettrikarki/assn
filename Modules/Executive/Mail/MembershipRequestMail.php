@@ -31,19 +31,14 @@ class MembershipRequestMail extends Mailable
      */
     public function build()
     {
-        $email = $this->view('executive::mails.membership-request')->subject('New Membership Request');
-//        $email->attach(Storage::disk('temp')->get($this->applicant['folder'].'/'.$this->applicant['photo']));
-//        $email->attach(Storage::disk('temp')->get($this->applicant['folder'].'/'.$this->applicant['mbbs']));
-//        $email->attach(Storage::disk('temp')->get($this->applicant['folder'].'/'.$this->applicant['ortho']));
-
-        $email->attach(storage_path('app/temp/'.$this->applicant['folder'].'/'.$this->applicant['photo']));
-        $email->attach(storage_path('app/temp/'.$this->applicant['folder'].'/'.$this->applicant['mbbs']));
-        $email->attach(storage_path('app/temp/'.$this->applicant['folder'].'/'.$this->applicant['ortho']));
-
-        if($this->applicant['other']){
-//            $email->attach(Storage::disk('temp')->get($this->applicant['folder'].'/'.$this->applicant['other']));
-            $email->attach(storage_path('app/temp/'.$this->applicant['folder'].'/'.$this->applicant['other']));
+        $email = $this->markdown('executive::mails.membership-request')->subject('New Membership Request');
+        if($this->applicant['photo']) {
+            $email->attach(storage_path('app/temp/' . $this->applicant['folder'] . '/' . $this->applicant['photo']));
         }
+        if($this->applicant['signature']) {
+            $email->attach(storage_path('app/temp/' . $this->applicant['folder'] . '/' . $this->applicant['signature']));
+        }
+
         return $email;
     }
 }

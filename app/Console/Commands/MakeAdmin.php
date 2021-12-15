@@ -8,14 +8,12 @@ use Illuminate\Support\Facades\Validator;
 use Modules\User\Models\Permission;
 use Modules\User\Models\Role;
 use Modules\User\Models\User;
-use Modules\User\Repositories\Contracts\PermissionContract;
-use Modules\User\Repositories\Contracts\RoleContract;
 use Modules\User\Repositories\Contracts\UserContract;
 
 class MakeAdmin extends Command
 {
 
-    protected $permissionContract,$roleContract,$userContract;
+
     /**
      * The name and signature of the console command.
      *

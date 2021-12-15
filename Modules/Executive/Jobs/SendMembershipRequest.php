@@ -18,7 +18,9 @@ use Modules\Executive\Mail\MembershipRequestMail;
 class SendMembershipRequest implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     public $applicant;
+
     public function __construct(array $applicant)
     {
         $this->applicant = $applicant;
@@ -31,7 +33,7 @@ class SendMembershipRequest implements ShouldQueue
                 ->cc(site('primary_email'))
                 ->send(new MembershipRequestMail($this->applicant));
         } else {
-            Mail::to('asonarthroscopy@gmail.com')
+            Mail::to('assn.spinenepal@gmail.com')
                 ->send(new MembershipRequestMail($this->applicant));
             Log::notice('Membership request email not configured.');
         }

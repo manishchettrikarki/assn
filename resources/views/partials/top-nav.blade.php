@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-4 col-12">
                     <span class="text-white">
-                        <a href="{{route('becomeMember')}}"><button type="button" class="btn">Become Our Member</button></a>
+                        <a href="{{route('membership.form')}}"><button type="button" class="btn">Become Our Member</button></a>
                     </span>
             </div>
         </div>

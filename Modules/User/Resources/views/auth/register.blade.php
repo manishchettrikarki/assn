@@ -8,6 +8,9 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    @foreach($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

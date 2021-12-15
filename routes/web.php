@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@home')->name('welcome');
 Route::get('/contact','ContactController@contact')->name('contact');
 Route::post('/contact','ContactController@sendContactMail')->name('contact.send');
-Route::get('/become-member','HomeController@becomemember')->name('becomeMember');
+
 

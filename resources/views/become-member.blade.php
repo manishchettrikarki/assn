@@ -40,33 +40,35 @@
             <!-- FORMS -->
             <div class="col-lg-7 mx-0 px-0">
                 <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 0%"></div>
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                         role="progressbar" style="width: 0%"></div>
                 </div>
                 <div id="qbox-container">
-                    <form class="needs-validation" id="form-wrapper" method="post" name="form-wrapper" novalidate="">
+                    <form class="needs-validation" id="member-form" method="post" name="form-wrapper" novalidate="" >
+                        @csrf
                         <div id="steps-container">
                             <div class="step">
                                 <h3>Membership criteria ASSN</h3>
                                 <h4>After PG in Ortho or Neurosurgery duly registered in NMC</h4>
                                 <div class="form-check ps-0 q-box">
-                                    <div class="q-box__question">
-                                        <input class="form-check-input question__input" id="q_1_yes" name="q_1" type="radio" value="Yes">
-                                        <label class="form-check-label question__label" for="q_1_yes">Has participated in at least one ASSN conference
+                                    <div class="q-box__question mb-1">
+                                        <input class="form-check-input question__input" id="option_1" name="q_1" type="radio" value="Yes">
+                                        <label class="form-check-label question__label" for="option_1">Has participated in at least one ASSN conference
                                             Plus
                                             Has participated in at least one course organized by ASSN or endorsed by ASSN
                                         </label>
                                     </div>
-                                    <div class="q-box__question">
-                                        <input checked class="form-check-input question__input" id="q_1_no" name="q_1" type="radio" value="No">
-                                        <label class="form-check-label question__label" for="q_1_no">Has done fellowship of at least 3 months duration recognized by ASSN</label>
+                                    <div class="q-box__question mb-1">
+                                        <input  class="form-check-input question__input" id="option_2" name="q_1" type="radio" value="No">
+                                        <label class="form-check-label question__label" for="option_2">Has done fellowship of at least 3 months duration recognized by ASSN</label>
                                     </div>
-                                    <div class="q-box__question">
-                                        <input checked class="form-check-input question__input" id="q_1_no" name="q_1" type="radio" value="No">
-                                        <label class="form-check-label question__label" for="q_1_no">Has done fellowship recommended by ASSN</label>
+                                    <div class="q-box__question mb-1">
+                                        <input  class="form-check-input question__input" id="option_3" name="q_1" type="radio" value="No">
+                                        <label class="form-check-label question__label" for="option_3">Has done fellowship recommended by ASSN</label>
                                     </div>
-                                    <div class="q-box__question">
-                                        <input checked class="form-check-input question__input" id="q_1_no" name="q_1" type="radio" value="No">
-                                        <label class="form-check-label question__label" for="q_1_no">Has participated in at least one ASSN conference or Has participated in at least One course organized by ASSN or endorsed by ASSN or Has presented paper in ASSN conference
+                                    <div class="q-box__question mb-1">
+                                        <input  class="form-check-input question__input" id="option_4" name="q_1" type="radio" value="No">
+                                        <label class="form-check-label question__label" for="option_4">Has participated in at least one ASSN conference or Has participated in at least One course organized by ASSN or endorsed by ASSN or Has presented paper in ASSN conference
                                             Plus
                                             Has done International course recognized by ASSN like AO Spine Principle course
                                         </label>
