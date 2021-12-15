@@ -10,7 +10,7 @@
             <img src="http://localhost:8000/uploads/events/flyer-3.jpg" alt="" width="50%" />
             <p>HIMALAYAN SPINE SYMPOSIUM - Annual Conference</p>
             <div class="bts-popup-button">
-                <a href="http://localhost:8000/uploads/events/flyer-3.jpg" target="_blank">View Notice</a>
+                <a href="uploads/events/flyer-3.jpg" target="_blank">View Notice</a>
             </div>
             <a href="#0" class="bts-popup-close img-replace">Close</a>
         </div>
