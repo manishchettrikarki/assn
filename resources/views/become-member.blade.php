@@ -7,8 +7,8 @@
             <!-- TITLE -->
             <div class="col-lg-4 offset-lg-1 mx-0 px-0">
                 <div id="title-container">
-                    <img class="covid-image" src="http://localhost:8000/uploads/logo/logo.png">
-                    <h2>ASSN</h2>
+                    <img class="covid-image" src="{{site('logo')}}">
+                    <h2>{{site('name')}}</h2>
                     <h3>Become A Member</h3>
                     <p>Please fill in the details required in the form and complete all the steps to become our member.</p>
                     <!-- Button trigger modal -->

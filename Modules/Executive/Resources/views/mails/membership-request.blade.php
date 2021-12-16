@@ -38,6 +38,7 @@
     NMC Number: {{ $applicant['nmc'] }} <br>
     Other Reg. No: {{ $applicant['other_reg'] }}<br>
     Speciality: {{ $applicant['speciality'] }}<br><br>
+    Designation: {{ $applicant['designation'] }}<br><br>
     Degree: {{ $applicant['uni1_degree'] }}<br>
     University: {{ $applicant['uni1_name'] }}<br>
     Year: {{ $applicant['uni1_year'] }}<br><br>

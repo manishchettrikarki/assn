@@ -2,7 +2,7 @@
   <li>
     <a href="javascript: void(0);" class="has-arrow waves-effect">
       <i class="ti-write"></i>
-      <span>ASON Members</span>
+      <span> Members</span>
     </a>
     <ul class="sub-menu" aria-expanded="false">
       @can('view executive members')

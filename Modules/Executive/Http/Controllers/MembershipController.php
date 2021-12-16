@@ -31,7 +31,7 @@ class MembershipController extends Controller
 
         $applicant = array();
         $applicant['criteria'] = $requirements[$request->q_1];
-        $applicant['designation'] = $request->full_name;
+        $applicant['designation'] = $request->designation;
         $applicant['name'] = $request->full_name;
         $applicant['email'] = $request->email;
         $applicant['mobile'] = $request->mobile;
@@ -61,6 +61,7 @@ class MembershipController extends Controller
         $applicant['uni3_degree'] = $request->uni3_degree;
         $applicant['uni3_name'] = $request->uni3_name;
         $applicant['uni3_year'] = $request->uni3_year;
+        $applicant['sponsor'] = $request->sponsor;
 
         $tempFolder = uniqid();
         Storage::disk('temp')->makeDirectory($tempFolder,0777);

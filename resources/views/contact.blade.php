@@ -1,23 +1,6 @@
 @extends('layouts.app')
 @section('title','Contact Us')
 @section('content')
-{{--  <!--== Page Title Area Start ==-->--}}
-{{--  <section id="page-title-area">--}}
-{{--    <div class="container">--}}
-{{--      <div class="row">--}}
-{{--        <div class="col-lg-8 m-auto text-center">--}}
-{{--          <div class="page-title-content">--}}
-{{--            <h1 class="h2">Contact Us</h1>--}}
-{{--            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the--}}
-{{--              need</p>--}}
-{{--            <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let's See</a>--}}
-{{--          </div>--}}
-{{--        </div>--}}
-{{--      </div>--}}
-{{--    </div>--}}
-{{--  </section>--}}
-{{--  <!--== Page Title Area End ==-->--}}
-
   <!--== Contact Page Content Start ==-->
   <section id="page-content-wrap">
     <div class="contact-page-wrap section-padding">
@@ -29,12 +12,6 @@
                 <div class="col-lg-6">
                   <!-- Map Area Start -->
                   <div class="map-area-wrap">
-                    <!--  cbx-gmap start
-                     <div id="cbx-gmap">
-                         <div id="map_canvas" class="cbx-map map_canvas" data-lat="44.5403" data-lng="-78.5463" data-title="" data-content="<strong>6H Dilara Tower</strong><br /> <br />77 Bir Uttam C.R. Dutta Road <br /> Dhaka 1205 "></div>
-                     </div>
-                      cbx-gmap end -->
-{{--                    <iframe src="https://snazzymaps.com/embed/75079"></iframe>--}}
                     <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:720px;"><div id="googlemaps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=nepal+medicity+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embeddedmap-code" href="https://www.embed-map.com" id="authorizemaps-data">https://www.embed-map.com</a><style>#googlemaps-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
 
                   </div>

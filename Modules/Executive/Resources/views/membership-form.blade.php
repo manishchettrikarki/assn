@@ -13,24 +13,45 @@
                     <p>Please fill in the details required in the form and complete all the steps to become our member.</p>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Launch demo modal
+                        Read more
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> Prerequisites for membership application</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <p>
+                                    Before submission for membership be ready with following documents and fee after filling application form
+                                </p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">NMC Registration Photocopy (MBBS)</li>
+                                    <li class="list-group-item">NMC Registration Photocopy (MS Ortho)</li>
+                                    <li class="list-group-item">Nepali Citizenship Photocopy</li>
+                                    <li class="list-group-item">MS Ortho Passed Photocopy (Degree Certificate)</li>
+                                    <li class="list-group-item">Certificates according to Membership Criteria of ASSN</li>
+                                </ul>
+
+                                <h3 class="text-center">Fee</h3>
+                                <p>NRs. 5,000/- payable cash at NMA Office or deposit into ASSN Bank Account.</p>
+
+                                <strong>For deposit into bank</strong> <br>
+                                Account Holder's Name: <strong> Association of Spine Surgeons of Nepal</strong><br>
+                                Account Number: <strong>03315026180</strong><br>
+                                Bank Name: <strong>Siddhartha Bank Ltd. </strong><br>
+                                Branch: <strong>Kantipath Branch,Kathmandu</strong><br>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -39,11 +60,18 @@
             </div>
             <!-- FORMS -->
             <div class="col-lg-9 mx-0 px-0">
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                         role="progressbar" style="width: 0%"></div>
-                </div>
+
+
+
                 <div id="qbox-container">
+                    @if(session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <form class="needs-validation" id="member-form" method="post" name="form-wrapper" novalidate="" enctype="multipart/form-data">
                         @csrf
 
@@ -302,7 +330,7 @@
                                     <div class="mt-1">
                                         <label class="form-label" for="speciality">Speciality</label>
                                         <input class="form-control @error('speciality') is-invalid @enderror" id="speciality"
-                                               name="speciality" type="text" value="{{ old('speciality') }}">
+                                               name="speciality" type="text" value="{{ old('speciality') }}" required>
                                         @error('speciality')
                                         <span class="error">{{ $message }}</span>
                                         @enderror
@@ -311,11 +339,11 @@
                                         <label class="form-label">University-1</label>
                                         <input class="form-control @error('uni1_degree') is-invalid @enderror" id="uni1_degree"
                                                name="uni1_degree" placeholder="Degree/Diploma/Fellowship/Post Graduate/etc"
-                                               type="text" value="{{ old('uni1_degree') }}">
+                                               type="text" value="{{ old('uni1_degree') }}" required>
                                         <input class="form-control @error('uni1_name') is-invalid @enderror" id="uni1_name"
-                                               name="uni1_name" placeholder="University/Institution" type="text" value="{{ old('uni1_name') }}">
+                                               name="uni1_name" placeholder="University/Institution" type="text" value="{{ old('uni1_name') }}" required>
                                         <input class="form-control @error('uni1_year') is-invalid @enderror" id="uni1_year"
-                                               name="uni1_year" placeholder="Year" type="text" value="{{ old('uni1_year') }}">
+                                               name="uni1_year" placeholder="Year" type="text" value="{{ old('uni1_year') }}" required>
                                         @error('uni1_degree')
                                         <span class="error">{{ $message }}</span>
                                         @enderror
@@ -412,6 +440,15 @@
 
                                     Please be sure to confirm all the details provided are accurate and not are subjected to change during further processing before submitting.
 
+                                    <div class="form-group row">
+                                        <div class="col-4"></div>
+                                        <div class="col-6">
+                                            <div class="g-recaptcha"
+                                                 data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -428,4 +465,5 @@
             </div>
         </div>
     </div>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 @endsection

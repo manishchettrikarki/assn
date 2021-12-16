@@ -472,7 +472,7 @@ class="" style="vertical-align:top;width:600px;"
 <td align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;">
 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
 <tr>
-<td align="center" bgcolor="#f45e43" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#f45e43;" valign="middle"> <a href="http://localhost:8000" style="display:inline-block;background:#f45e43;color:white;font-family:Helvetica;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;"
+<td align="center" bgcolor="#f45e43" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#f45e43;" valign="middle"> <a href="#" style="display:inline-block;background:#f45e43;color:white;font-family:Helvetica;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;"
                                                                                                  target="_blank">
 Reply
 </a> </td>
