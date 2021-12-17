@@ -70,7 +70,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                            <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="post">Message</label>
                                                     <textarea type="text" rows="5" cols="50"
@@ -130,6 +130,62 @@
 @endsection
 @section('script')
     <script>
+
+        $(document).ready(function () {
+            0 < $("#message").length &&
+            tinymce.init({
+                selector: "textarea#message",
+                height: 300,
+                plugins: [
+                    'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks ' +
+                    'visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking ' +
+                    'anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap ' +
+                    'quickbars emoticons',
+                ],
+                toolbar:'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | ' +
+                        'alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | ' +
+                        'forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | ' +
+                        'insertfile image media template link anchor codesample | ltr rtl',
+                toolbar_sticky: true,
+                file_picker_callback (callback, value, meta) {
+                    let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+                    let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
+
+                    tinymce.activeEditor.windowManager.openUrl({
+                        url : '/file-manager/tinymce5',
+                        title : 'Library',
+                        width : x * 0.8,
+                        height : y * 0.8,
+                        onMessage: (api, message) => {
+                            callback(message.content, { text: message.text })
+                        }
+                    })
+                },
+                style_formats: [
+                    { title: "Bold text", inline: "b" },
+                    { title: "Red text", inline: "span", styles: { color: "#ff0000" } },
+                    { title: "Red header", block: "h1", styles: { color: "#ff0000" } },
+                    { title: "Example 1", inline: "span", classes: "example1" },
+                    { title: "Example 2", inline: "span", classes: "example2" },
+                    { title: "Table styles" },
+                    { title: "Table row 1", selector: "tr", classes: "tablerow1" },
+                ],
+                templates: [
+                    { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+                    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+                    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+                ],
+                template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+                template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+                height: 600,
+                image_caption: true,
+                quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+                noneditable_noneditable_class: "mceNonEditable",
+                toolbar_mode: 'sliding',
+                contextmenu: "link image imagetools table",
+            });
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
 
             document.getElementById('button-image').addEventListener('click', (event) => {

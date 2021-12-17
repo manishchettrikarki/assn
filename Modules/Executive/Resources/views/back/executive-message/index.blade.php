@@ -79,7 +79,7 @@
                                             <img src="{{ $message->image }}" alt="" width="80" class="img  img-thumbnail">
                                             </td>
                                         <td>
-                                            {{ substr($message->message, 0, 100) }}</td>
+                                            {{ strip_tags(substr($message->message, 0, 100)) }}</td>
                                         <td>{{ $message->updated_by }}</td>
                                         <td>
                                             <a class="btn btn-primary my-3" href="{{route('executive.message.edit',$message->id)}}">Update</a>

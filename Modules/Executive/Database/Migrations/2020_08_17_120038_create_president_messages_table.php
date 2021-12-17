@@ -15,6 +15,7 @@ class CreatePresidentMessagesTable extends Migration
     {
         Schema::create('executive_messages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('post')->unique();
             $table->string('image')->nullable();
             $table->text('message')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();

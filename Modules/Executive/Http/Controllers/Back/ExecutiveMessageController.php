@@ -30,15 +30,19 @@
         return view('executive::back.executive-message.create');
     }
     public function store(Request $request){
+        $request->validate([
+            'post'=>'required|max:50|unique:executive_messages,post',
+            'message'=>'required'
+        ]);
         $this->messageContract->create(
             [
                 'post'=>$request->post,
                 'message'=>$request->message,
                 'image'=>$request->image,
-                'slug'=> Str::slug($request->post)
+                'slug'=> Str::slug($request->post,'-')
             ]
         );
-    return $this->index();
+    return redirect()->route('executive.message')->with('success','Message added for '.$request->post);
     }
     public function edit($id){
         $executiveMessage = ExecutiveMessage::findorfail($id);
@@ -49,7 +53,8 @@
           $executiveMessage -> update([
               'post'=> $request -> post,
               'message' => $request -> message,
-              'image'=>$request-> image
+              'image'=>$request-> image,
+              'slug'=>Str::slug($request->post,'-')
           ]);
           return redirect()->route('executive.message')->with('success','Details Updated Successfully');
 

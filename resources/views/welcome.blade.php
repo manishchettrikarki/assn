@@ -2,14 +2,15 @@
 @section('title','Home')
 @section('content')
     @include('partials.homepage.slider')
+{{--    @include('partials.homepage.upcoming-event')--}}
+{{--    @include('partials.homepage.message')--}}
 {{--   POPUP STARTS--}}
     <div class="bts-popup" role="alert">
         <div class="bts-popup-container">
             <img src="{{ asset('/uploads/events/flyer-3.jpg') }}" alt="" width="50%" />
             <p>HIMALAYAN SPINE SYMPOSIUM - Annual Conference</p>
             <div class="bts-popup-button">
-
-                <a href="{{asset('uploads/events/flyer-3.jpg')}}" target="_blank">View Notice</a>
+                <a href="{{ asset('/uploads/events/flyer-3.jpg') }}" target="_blank">View Notice</a>
             </div>
             <a href="#0" class="bts-popup-close img-replace">Close</a>
         </div>
@@ -100,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 historylogo">
-                    <img src="{{asset('images/history-logo.png')}}" class="img-fluid" alt="ASSN"/>
+                    <img src="images/history-logo.png" class="img-fluid" alt="ASSN"/>
                 </div>
             </div>
         </div>
@@ -143,7 +144,7 @@
                             <a href="{{route('events')}}" class="btn float-end orange sectionbtn">View All</a>
                         </div>
 
-                        <img src="{{asset('/images/newsbg.png')}}" class="img-fluid news-latest" alt="">
+                        <img src="{{ asset('/images/newsbg.png') }}" class="img-fluid news-latest" alt="">
                         <div class="news-latest"></div>
                     </div>
                     @if($upcomingEvent)
@@ -174,7 +175,7 @@
 
                             <a href="{{route('events')}}" class="btn float-end orange sectionbtn">View All</a>
                         </div>
-                        <img src="{{asset('images/eventbg.png')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('images/eventbg.png') }}" class="img-fluid" alt="">
                         <div class="eventbg"></div>
                     </div>
                         @endif
@@ -198,10 +199,10 @@
                         <h3>Message From {{$message->post}}</h3>
                         <div class="underline"></div>
                         <p>
-                            {{ $message->message }}
+                            {{ strip_tags(substr($message->message, 0, 400)) }}...
                         </p>
                         <div>
-                            <a href="president-message.php">
+                            <a href="{{route('member.message',$message->post)}}">
                                 <button type="button" class="btn orange mt-4">Read More</button>
                             </a>
                         </div>
@@ -211,10 +212,10 @@
                         <h3>Message From {{$message->post}}</h3>
                         <div class="underline"></div>
                         <p>
-                            {{ $message->message }}
+                            {{ strip_tags(substr($message->message, 0, 400)) }}...
                         </p>
                         <div>
-                            <a href="{{route('member.message',$message->post)}}">
+                            <a href="{{route('member.message',$message->slug)}}">
                                 <button type="button" class="btn orange mt-4">Read More</button>
                             </a>
                         </div>

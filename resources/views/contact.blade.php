@@ -12,7 +12,9 @@
                 <div class="col-lg-6">
                   <!-- Map Area Start -->
                   <div class="map-area-wrap">
-                    <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:720px;"><div id="googlemaps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=nepal+medicity+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embeddedmap-code" href="https://www.embed-map.com" id="authorizemaps-data">https://www.embed-map.com</a><style>#googlemaps-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
+                    <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:720px;">
+                      <div id="googlemaps-display" style="height:100%; width:100%;max-width:100%;">
+                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=nepal+medical+association+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embeddedmap-code" href="https://www.embed-map.com" id="authorizemaps-data">https://www.embed-map.com</a><style>#googlemaps-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
 
                   </div>
                   <!-- Map Area End -->
@@ -37,7 +39,7 @@
                         </div>
                       @endif
 
-                    <h3>send message</h3>
+                    <h3>We would love to hear from you</h3>
                     <form action="{{ route('contact.send') }}" method="post" id="cbx-contact-form">
                       @csrf
                       <div class="row">
@@ -108,7 +110,26 @@
                       <div id="cbx-formalert"></div>
                     </form>
                   </div>
+
+                    <div class="row">
+                      <div class="col-12 col-md-4 col-lg-4">
+                        <h4>{{ site('name') }}</h4>
+                        <p>{{ site('description') }}</p>
+                      </div>
+
+                      <div class="col-12 col-md-4 col-lg-4">
+                        <h4>{{ site('contact') }}</h4>
+                        <p>{{ site('hunting_line') }}</p>
+                      </div>
+
+                      <div class="col-12 col-md-4 col-lg-4">
+                        <h4>{{ site('address') }}</h4>
+
+                      </div>
+
+                    </div>
                 </div>
+
               </div>
             </div>
           </div>

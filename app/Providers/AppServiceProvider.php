@@ -18,12 +18,12 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
 
-      Schema::defaultStringLength(191);
-      $this->app->register(RepositoryServiceProvider::class);
+        Schema::defaultStringLength(191);
+        $this->app->register(RepositoryServiceProvider::class);
         $this->app->register(ViewComposerServiceProvider::class);
         $this->app->register(HelperServiceProvider::class);
-      $this->app->bind('site',Setting::class);
-      $this->app->bind('social',SocialLink::class);
+        $this->app->bind('site',Setting::class);
+        $this->app->bind('social',SocialLink::class);
     }
 
     /**
@@ -33,6 +33,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      Validator::extend('recaptcha','App\\Http\\Validators\\ReCaptcha@validate');
+        Validator::extend('recaptcha','App\\Http\\Validators\\ReCaptcha@validate');
     }
 }

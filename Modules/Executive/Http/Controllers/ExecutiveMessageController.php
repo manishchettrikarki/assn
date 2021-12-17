@@ -14,7 +14,7 @@ class ExecutiveMessageController extends Controller
     {
         $message= ExecutiveMessage::where('slug',$post)->first();
         if (!$message) abort(404);
-        return view('executive-message',compact('message'));
+        return view('executive::executive-message',compact('message'));
     }
 
 }
